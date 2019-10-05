@@ -188,8 +188,11 @@ int64_t ustime(void) {
     myStatusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength] retain];
     
     myStatusImageOK = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource:@"iconok" ofType:@"png"]];
+    [myStatusImageOK setTemplate:true];
     myStatusImageSLOW = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource:@"iconslow" ofType:@"png"]];
+    [myStatusImageSLOW setTemplate:true];
     myStatusImageKO = [[NSImage alloc] initWithContentsOfFile: [bundle pathForResource:@"iconko" ofType:@"png"]];
+    [myStatusImageKO setTemplate:true];
     [myStatusItem setImage:myStatusImageKO];
     [myStatusItem setMenu: myMenu];
     [self changeConnectionState: CONN_STATE_KO];
